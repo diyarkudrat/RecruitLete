@@ -20,5 +20,26 @@ module.exports = (app) => {
             .catch(err => {
                 console.log(err.message)
             })
-    })
+    });
+
+    //GET SINGLE POST
+    app.get("/posts/:id", function(req, res) {
+        
+        Post.findById(req.params.id)
+          .then(post => {
+            res.render("posts-show", { post });
+          })
+          .catch(err => {
+            console.log(err.message);
+          });
+      });
+
+      //DELETE SINGLE POST
+      app.post("/posts/:id/delete", function(req, res) {
+
+        Post.findByIdAndDelete(req.params.id)
+          .then(
+            res.redirect('/')
+          )
+      })
 };

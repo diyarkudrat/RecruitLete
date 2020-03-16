@@ -3,7 +3,7 @@
         <ul>
             {{#each posts}}
                 <li class="list-group-item">
-                    <div class="lead">{{this.content}}</div>
+                    <div class="lead"><a href="/posts/{{this._id}}">{{this.content}}</a></div>
                     <a href="{{this.url}}" target="_blank">{{this.url}}</a>
                 </li>
             {{/each}}

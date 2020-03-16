@@ -8,6 +8,7 @@ require('dotenv').config();
 
 const app = express();
 
+
 // Use Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -34,6 +35,7 @@ app.get('/posts/new', (req, res) => {
 
 //Controllers
 require('./controllers/posts.js')(app);
+require('./controllers/auth.js')(app);
 
 
 app.listen(3000, () => {
