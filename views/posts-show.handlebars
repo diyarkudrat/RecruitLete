@@ -4,5 +4,15 @@
     <a href="{{post.url}}">{{post.url}}</a>
     <a class="btn btn-danger" href="/posts/{{post._id}}/delete" role="button">Delete</a>
   </div>
-
 </div>
+
+<form action="/posts/{{post._id}}/comments" method="post">
+    <textarea class='form-control' name="content" placeholder="Comment"></textarea>
+    <div class="text-right">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>
+
+{{#each post.comments}}
+  {{> comment comment=this postId=../post._id}}
+{{/each}}
