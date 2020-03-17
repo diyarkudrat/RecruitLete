@@ -47,10 +47,12 @@ app.get('/posts/new', (req, res) => {
     res.render('posts-new')
 });
 
+
 //Controllers
 require('./controllers/posts.js')(app);
 require('./controllers/auth.js')(app);
 require('./controllers/comments.js')(app);
+// require('./controllers/profile.js')(app);
 
 
 
