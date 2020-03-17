@@ -4,22 +4,28 @@ module.exports = (app) => {
 
     // CREATE
     app.post('/posts/new', (req, res) => {
-      const post = new Post(req.body);
-  
-      post.save((err, post) => {
-        return res.redirect(`/`);
-      })
+      if (req.user) {
+        const post = new Post(req.body);
+
+        post.save(function(err, post) {
+          return res.redirect(`/`);
+        });
+      } else {
+        return res.status(401);
+      }
     });
 
     //INDEX
     app.get('/', (req, res) => {
-        Post.find({})
-            .then( posts => {
-                res.render("posts-index", { posts });
-            })
-            .catch(err => {
-                console.log(err.message)
-            })
+      const currentUser = req.user;
+
+      Post.find({})
+          .then( posts => {
+              res.render("posts-index", { posts, currentUser });
+          })
+          .catch(err => {
+              console.log(err.message)
+          })
     });
 
     //GET SINGLE POST
