@@ -7,14 +7,14 @@ const UserSchema = new Schema({
   updatedAt: { type: Date },
   password: { type: String, select: false },
   username: { type: String, required: true },
-  email: { type: String, required: true },
-  organization: { type: String, required: true },
-  year: { type: Number, required: true },
-  height: { type: String, required: true },
-  weight: { type: String, required: true },
-  city: { type: String, required: true },
-  state: { type: String, required: true },
-  zip: { type: Number, required: true },
+  email: { type: String, },
+  organization: { type: String, },
+  year: { type: Number, },
+  height: { type: String, },
+  weight: { type: String, },
+  city: { type: String, },
+  state: { type: String, },
+  zip: { type: Number, },
   posts : [{ type: Schema.Types.ObjectId, ref: "Post" }]
 });
 

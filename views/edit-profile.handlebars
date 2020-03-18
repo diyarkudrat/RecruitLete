@@ -1,30 +1,30 @@
-<form method="POST" action="/profile/{{user._id}}/manage?_method=PUT">
+<form method="POST" action="/profile/{{user._id}}/manage">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputOrganization">Organization</label>
-      <input type="text" class="form-control" id="inputOrganization" placeholder="{{user.organization}}">
+      <input type="text" name="organization" class="form-control" id="inputOrganization" value="{{user.organization}}"></input>
     </div>
   </div>
   <div class="form-group">
     <label for="inputGradYear">Grad Year</label>
-    <input type="text" class="form-control" id="inputGradYear" placeholder="{{user.year}}">
+    <input type="text" name="year" class="form-control" id="inputGradYear" value="{{user.year}}">
   </div>
   <div class="form-group">
-    <label for="inputHeight">Height / Weight</label>
-    <input type="text" class="form-control" id="inputHeight">
+    <label for="inputHeight">Height</label>
+    <input type="text" name="height" class="form-control" id="inputHeight" value="{{user.height}}">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
+      <input type="text" name="city" class="form-control" id="inputCity" value="{{user.city}}">
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">State</label>
-      <input type="text" class="form-control" id="inputState">
+      <input type="text" name="state" class="form-control" id="inputState" value="{{user.state}}">
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
+      <input type="text" name="zip" class="form-control" id="inputZip" value="{{user.zip}}">
     </div>
   </div>
   <button type="submit" class="btn btn-primary">Save</button>
