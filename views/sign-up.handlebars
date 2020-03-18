@@ -1,102 +1,54 @@
-{{!-- 
 <form action="/sign-up" method="post">
+  <legend>Sign Up</legend>
   <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="inputEmail">Email</label>
-      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-    </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-6">
       <label for="username">Username</label>
-        <input type="text" name="username" class="form-control" id="username" placeholder="Username">
+      <input type="text" name="username" class="form-control" id="username" placeholder="Username">
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-6">
       <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+      <input type="password" name="password" class="form-control" id="password" placeholder="Password">
     </div>
   </div>
   <div class="form-group">
-    <label for="organization">Organization</label>
-    <input type="text" name="organization" class="form-control" id="organization">
+    <label for="email">Email</label>
+    <input type="text" name="email" class="form-control" id="email">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-lg-8">
+      <label for="organization">Organization</label>
+      <input type="text" name="organization" class="form-control" id="organization">
+    </div>
+    <div class="form-group col-sm-4">
+      <label for="year">Graduation Year</label>
+      <input type="text" name="year" class="form-control" id="year">
+    </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputTwitter">Twitter</label>
-      <input type="text" class="form-control" id="inputTwitter">
+      <label for="height">Height</label>
+      <input type="text" name="height" class="form-control" id="height">
     </div>
     <div class="form-group col-md-6">
-      <label for="year">Graduation Year</label>
-      <input type="text" class="form-control" name="year" id="year">
+      <label for="weight">Weight</label>
+      <input type="text" name="weight" class="form-control" id="weight">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="city">City</label>
-      <input type="text" class="form-control" name="city" id="city">
+      <input type="text" name="city" class="form-control" id="city">
     </div>
     <div class="form-group col-md-4">
       <label for="state">State</label>
-      <input type="text" class="form-control" name="state" id="state">
+      <input type="text" name="state" class="form-control" id="state">
     </div>
     <div class="form-group col-md-2">
-      <label for="zip">Zip</label>
-      <input type="text" class="form-control" name="zip" id="zip">
+      <label for="zip">Zip Code</label>
+      <input type="text" name="zip" class="form-control" id="zip">
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Sign Up</button>
-</form> --}}
-
-
-  <form action="/sign-up" method="post">
-    <legend>Sign Up</legend>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="username">Username</label>
-        <input type="text" name="username" class="form-control" id="username" placeholder="Username">
-      </div>
-      <div class="form-group col-md-6">
-        <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="text" name="email" class="form-control" id="email">
-    </div>
-    <div class="form-row">
-      <div class="form-group col-lg-8">
-        <label for="organization">Organization</label>
-        <input type="text" name="organization" class="form-control" id="organization">
-      </div>
-      <div class="form-group col-sm-4">
-        <label for="year">Graduation Year</label>
-        <input type="text" name="year" class="form-control" id="year">
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="height">Height</label>
-        <input type="text" name="height" class="form-control" id="height">
-      </div>
-      <div class="form-group col-md-6">
-        <label for="weight">Weight</label>
-        <input type="text" name="weight" class="form-control" id="weight">
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="city">City</label>
-        <input type="text" name="city" class="form-control" id="city">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="state">State</label>
-        <input type="text" name="state" class="form-control" id="state">
-      </div>
-      <div class="form-group col-md-2">
-        <label for="zip">Zip Code</label>
-        <input type="text" name="zip" class="form-control" id="zip">
-      </div>
-    </div>
-    <div class='text-right'>
-      <button type="submit" class="btn btn-primary">Create New User</button>
-    </div>
-  </form>
+  <div class='text-right'>
+    <button type="submit" class="btn btn-primary">Create New User</button>
+  </div>
+</form>
