@@ -8,11 +8,9 @@ module.exports = function (app) {
 
 
     // CREATE Comment
-    app.post("/posts/:postId/comments", function(req, res) {
-
+    app.post("/posts/:postId/comments", function (req, res) {
         const comment = new Comment(req.body);
         comment.author = req.user._id;
-        
         comment
             .save()
             .then(comment => {

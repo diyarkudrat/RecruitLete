@@ -43,13 +43,15 @@ module.exports = (app) => {
   })
 
     //GET SINGLE POST
-    app.get("/posts/:id", function(req, res) {
-        
-      Post.findById(req.params.id).populate('comments').then((post) => {
-        res.render('posts-show', { post })
-      }).catch((err) => {
-        console.log(err.message)
-      })
+    app.get("/posts/:id", function (req, res) {
+      const currentUser = req.user;
+      Post.findById(req.params.id).populate('comments').lean()
+          .then(post => {
+              res.render("posts-show", { post, currentUser });  
+          })
+          .catch(err => {
+              console.log(err.message);
+          });
     });
 
     //DELETE SINGLE POST
