@@ -91,8 +91,10 @@ module.exports = (app) => {
     })
 
     //Edit profile information
-    app.put('/profile/:id/manage', (req, res) => {
+    app.post('/profile/:id/manage', (req, res) => {
         console.log(req.body)
+
+        console.log('!!!!!!!')
 
         User.findByIdAndUpdate(req.params.id, {$set:req.body}, function(err, result) {
             if(err) {
@@ -102,4 +104,4 @@ module.exports = (app) => {
             res.redirect(`/`)
         })
     })
-  }
+}
