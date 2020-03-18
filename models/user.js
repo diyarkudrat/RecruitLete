@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const Schema = mongoose.Schema;
+// const mongoose_fuzzy_searching = require('mongoose-fuzzy-searching')
 
 const UserSchema = new Schema({
   createdAt: { type: Date },
@@ -45,5 +46,7 @@ UserSchema.pre("save", function(next) {
       done(err, isMatch);
     });
 };
+
+// UserSchema.plugin(mongoose_fuzzy_searching, {fields: ['username, year, height, weight, city, state, zip']});
   
-  module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("User", UserSchema);

@@ -5,17 +5,13 @@
         <input type="submit" value="Search" class="btn btn-primary">
     </form>
     <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <ul>
-                {{#each users}}
-                    <li class="list-group-item">
-                        {{!-- <div class="lead"><a href="/posts/{{this._id}}">{{this.content}}</a></div> --}}
-                        {{!-- <a href="{{this.url}}" target="_blank">{{this.url}}</a> --}}
-                        <div><small>{{this.username}}</small></div>
-                    </li>
-                {{/each}}
-            </ul>
-        </div>
+        {{#each users}}
+            <div class="profile col-md-6">
+                <img src="https://cdn4.iconfinder.com/data/icons/e-commerce-181/512/477_profile__avatar__man_-512.png" alt="Profile Image" class="profile__image">
+                <div class="profile__name">{{this.username}}</div>
+                <div class="profile__organization">{{this.organization}}</div>
+            </div>
+        {{/each}}
     </div>
 {{else}}
 
