@@ -1,4 +1,4 @@
-
+{{!-- 
 <div class="form-row">
     <div class="form-group col-md-6">
     <h1>{{ user.username }}</h1>
@@ -13,6 +13,10 @@
 <div class="form-group">
     <h1>{{ user.organization }}</h1>
 </div>
+<div class="form-group">
+    <h1>{{ user.height }}</h1><br>
+    <h1>{{ user.weight}}</h1>
+</div>
 <div class="form-row">
     <div class="form-group col-md-6">
     <h1>{{ user.city }}</h1>
@@ -25,4 +29,118 @@
     </div>
 </div>
 
-<a class="btn btn-primary" href="/profile/{{user._id}}/manage" role="button">Edit</a>
+<a class="btn btn-primary" href="/profile/{{user._id}}/manage" role="button">Edit</a> --}}
+
+
+<div class="emp-profile">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-img">
+                <img src="https://cdn4.iconfinder.com/data/icons/e-commerce-181/512/477_profile__avatar__man_-512.png">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="profile-head">
+                <h5>{{ user.username }}</h5>
+                <h4>{{ user.organization }}</h4>
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Posts</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <a class="profile-edit-btn" href="/profile/{{user._id}}/manage">Edit Profile</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-work">
+                <p>SOCIAL LINKs</p>
+                <a href="">Hudl</a><br/>
+                <a href="">Twitter</a><br/>
+                <a href="">Instagram</a>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="tab-content profile-tab" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Username</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{{user.username}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Email</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{{user.email}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Organization</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{{user.organization}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Graduation Year</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{{user.year}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Height</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{{user.height}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Weight</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{{user.weight}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>City</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{{user.city}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>State</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{{user.state}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="column">
+                        <h1>All Posts</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

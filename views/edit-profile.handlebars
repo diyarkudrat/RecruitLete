@@ -9,9 +9,15 @@
     <label for="inputGradYear">Grad Year</label>
     <input type="text" name="year" class="form-control" id="inputGradYear" value="{{user.year}}">
   </div>
-  <div class="form-group">
-    <label for="inputHeight">Height</label>
-    <input type="text" name="height" class="form-control" id="inputHeight" value="{{user.height}}">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="height">Height</label>
+      <input type="text" name="height" class="form-control" id="height" value="{{user.height}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="weight">Weight</label>
+      <input type="text" name="weight" class="form-control" id="weight" value="{{user.weight}}">
+    </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
