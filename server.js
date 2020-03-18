@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator')
 const cookieParser = require('cookie-parser');
+const methodOverride = require('method-override')
 const jwt = require('jsonwebtoken');
 
 require('dotenv').config();
@@ -13,6 +14,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(methodOverride('_method'));
 
 // Adding body parser
 app.use(expressValidator());

@@ -71,11 +71,35 @@ module.exports = (app) => {
 
     //GET profile information
     app.get('/profile/:id', (req, res) => {
+        const currentUser = req.user;
 
         User.findById(req.params.id).then((user) => {
-            res.render('profile', { user })
+            res.render('profile', { user, currentUser })
           }).catch((err) => {
             console.log(err.message)
           })
+    })
+
+    app.get('/profile/:id/manage', (req, res) => {
+        const currentUser = req.user;
+
+        User.findById(req.params.id).then((user) => {
+            res.render('edit-profile', { user, currentUser })
+          }).catch((err) => {
+            console.log(err.message)
+          })
+    })
+
+    //Edit profile information
+    app.put('/profile/:id/manage', (req, res) => {
+        console.log(req.body)
+
+        User.findByIdAndUpdate(req.params.id, {$set:req.body}, function(err, result) {
+            if(err) {
+                console.log(err);
+            }
+            console.log("RESULT: " + result);
+            res.redirect(`/`)
+        })
     })
   }
