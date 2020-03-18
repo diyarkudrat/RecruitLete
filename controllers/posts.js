@@ -3,6 +3,12 @@ const User = require('../models/user');
 
 module.exports = (app) => {
 
+
+    app.get('/posts/new', (req, res) => {
+        const currentUser = req.user
+        res.render('posts-new', { currentUser })
+    });
+
     // CREATE
     app.post("/posts/new", (req, res) => {
       if (req.user) {
@@ -40,7 +46,7 @@ module.exports = (app) => {
       }).catch(err => {
           console.log(err.message);
       })
-  })
+    });
 
     //GET SINGLE POST
     app.get("/posts/:id", function (req, res) {
