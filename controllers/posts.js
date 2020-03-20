@@ -12,8 +12,10 @@ module.exports = (app) => {
     // CREATE
     app.post("/posts/new", (req, res) => {
       if (req.user) {
-          var post = new Post(req.body);
+          const post = new Post(req.body);
           post.author = req.user._id;
+          post.likes = [];
+          post.totalLikes = 0;
 
           post
               .save()
@@ -68,4 +70,19 @@ module.exports = (app) => {
           res.redirect('/')
         )
     });
+
+    //Like a post
+    app.put("/posts/:id/like", function(req, res) {
+        Post.findById(req.params.id).exec(function(err, post) {
+          post.likes.push(req.user._id);
+          post.totalLikes = post.totalLikes + 1;
+          post.save();
+
+          console.log('!!!!!!!!')
+          console.log(post.likes)
+          console.log(post.totalLikes)
+      
+          res.status(200);
+        });
+      });
 };
