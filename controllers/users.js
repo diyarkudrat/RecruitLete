@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Post = require('../models/post');
 
 
 module.exports = (app) => {
@@ -6,12 +7,12 @@ module.exports = (app) => {
     //GET profile information
     app.get('/profile/:id', (req, res) => {
         const currentUser = req.user;
-    
-        User.findById(req.params.id).then((user) => {
-            res.render('profile', { user, currentUser })
-          }).catch((err) => {
-            console.log(err.message)
-          })
+        User.findById(req.params.id).populate('posts')
+            .then((user) => {
+                res.render('profile', { user, currentUser })
+            }).catch((err) => {
+                console.log(err.message)
+            })
     })
     
     app.get('/profile/:id/manage', (req, res) => {

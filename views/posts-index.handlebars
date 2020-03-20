@@ -5,9 +5,15 @@
             <ul>
                 {{#each posts}}
                     <li class="list-group-item">
-                        <div class="lead"><a href="/posts/{{this._id}}">{{this.content}}</a></div>
-                        <a href="{{this.url}}" target="_blank">{{this.url}}</a>
-                        <div><small>{{this.author.username}}</small></div>
+                        <div class="post">
+                            <div class="post-info">
+                                <div class="post-date">
+                                    <span>{{this.createdAt}}</span>
+                                </div>
+                                <h1 class="post-title">{{this.content}}</h1>
+                                <a href="posts/{{this._id}}"class="post-author">{{ this.author.username}}</a>
+                            </div>
+                        </div>
                     </li>
                 {{/each}}
             </ul>
