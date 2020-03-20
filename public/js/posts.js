@@ -1,8 +1,8 @@
 $(document).ready(function() {
     $(".post-like").submit(function(e) {
       e.preventDefault();
-  
-      var postId = $(this).data("id");
+      const postId = $(this).data("id");
+
       $.ajax({
         type: "PUT",
         url: "posts/" + postId + "/like",
@@ -13,5 +13,10 @@ $(document).ready(function() {
           console.log(err.messsage);
         }
       });
+      
+      let currentLikes = +$(this).next().text();
+      currentLikes++;
+
+      $(this).next().text(currentLikes);
     });
   });
