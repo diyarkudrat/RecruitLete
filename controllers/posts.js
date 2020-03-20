@@ -78,10 +78,8 @@ module.exports = (app) => {
           post.totalLikes = post.totalLikes + 1;
           post.save();
 
-          console.log('!!!!!!!!')
-          console.log(post.likes)
           console.log(post.totalLikes)
-      
+            
           res.status(200);
         });
       });
