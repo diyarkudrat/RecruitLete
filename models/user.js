@@ -16,6 +16,9 @@ const UserSchema = new Schema({
   city: { type: String, },
   state: { type: String, },
   zip: { type: Number, },
+  hudl: { type: String },
+  twitter: { type: String },
+  instagram: { type: String },
   posts : [{ type: Schema.Types.ObjectId, ref: "Post" }],
   favorites : [{ type: Schema.Types.ObjectId, ref: "User"}]
 });
