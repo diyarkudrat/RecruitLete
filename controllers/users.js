@@ -30,13 +30,15 @@ module.exports = (app) => {
         console.log(req.body)
     
         console.log('!!!!!!!')
+
+        const user = req.user
     
         User.findByIdAndUpdate(req.params.id, {$set:req.body}, function(err, result) {
             if(err) {
                 console.log(err);
             }
             console.log("RESULT: " + result);
-            res.redirect(`/`)
+            res.redirect(`/profile/${user._id}`);
         })
     })
     
