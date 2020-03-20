@@ -44,7 +44,8 @@ app.use(checkAuth);
 require('./data/recruithub-db');
 
 
-
+// Static
+app.use(express.static('public'));
 
 //Controllers
 require('./controllers/posts.js')(app);
