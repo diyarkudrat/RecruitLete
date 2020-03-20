@@ -13,6 +13,7 @@ module.exports = (app) => {
     app.post("/sign-up", (req, res) => {
         // Create User and JWT
         const user = new User(req.body);
+        user.favorites = [];
     
         user
         .save()
@@ -68,4 +69,16 @@ module.exports = (app) => {
         res.clearCookie('nToken');
         res.redirect('/');
     });
+
+    app.put("/users/:id/favorite", function(req, res) {
+        User.findById(req.params.id).exec(function(err, user) {
+
+          user.favorites.push(req.user);
+          user.save();
+
+          console.log(user.favorites)
+        
+          res.status(200);
+        });
+      });
 }

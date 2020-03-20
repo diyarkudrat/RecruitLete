@@ -16,7 +16,8 @@ const UserSchema = new Schema({
   city: { type: String, },
   state: { type: String, },
   zip: { type: Number, },
-  posts : [{ type: Schema.Types.ObjectId, ref: "Post" }]
+  posts : [{ type: Schema.Types.ObjectId, ref: "Post" }],
+  favorites : [{ type: Schema.Types.ObjectId, ref: "User"}]
 });
 
 UserSchema.pre("save", function(next) {
