@@ -45,6 +45,16 @@
     </div>
   </div>
   <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="weightedGpa">Weighted GPA</label>
+      <input type="text" name="weightedGpa" class="form-control" id="weightedGpa" value="{{user.weightedGpa}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="unweightedGpa">Unweighted GPA</label>
+      <input type="text" name="unweightedGpa" class="form-control" id="unweightedGpa" value="{{user.unweightedGpa}}">
+    </div>
+  </div>
+  <div class="form-row">
     <div class="form-group col-md-4">
       <label for="inputHudl">Hudl Link</label>
       <input type="text" name="hudl" class="form-control" id="inputHudl" value="{{user.hudl}}">
@@ -146,22 +156,5 @@
             </div>
         </div>
     </div>
-
-    <footer class="container-fluid text-center">
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Contact Us</h3>
-                <br>
-                <h4>Address and Contact Info</h4>
-            </div>
-            <div class="col-lg-6">
-                <h3>Connect</h3>
-                <a href="#">Twitter</a>
-                <a href="#">Github</a>
-                <a href="#">Google</a>
-                <a href="#">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
 
 {{/if}}

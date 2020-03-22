@@ -16,10 +16,10 @@
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="posts-tab" data-toggle="tab" href="#posts" role="tab">Posts</a>
+                        <a class="nav-link" id="favorites-tab" data-toggle="tab" href="#academics" role="tab">Academics</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="favorites-tab" data-toggle="tab" href="#favorites" role="tab">Favorites</a>
+                        <a class="nav-link" id="posts-tab" data-toggle="tab" href="#posts" role="tab">Posts</a>
                     </li>
                 </ul>
             </div>
@@ -133,13 +133,23 @@
                         {{/each}}
                     </div>
                 </div>
-                <div class="tab-pane fade" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
-                    <div class="column">
-                        {{#each user.favorites}}
-                            <li class="list-group-item">
-                                {{this}}
-                            </li>
-                        {{/each}}
+                <div class="tab-pane fade" id="academics" role="tabpanel" aria-labelledby="academics-tab">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <b>Weighted GPA</b>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{{user.weightedGpa}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <b>Unweighted GPA</b>
+                        </div>
+                        <div class="col-md-6">
+                            <label>{{user.unweightedGpa}}</label>
+                        </div>
+                        <a class="btn btn-warning" href="/profile/{{user._id}}/manage">Edit GPA</a>
                     </div>
                 </div>
             </div>
