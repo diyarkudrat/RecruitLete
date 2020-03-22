@@ -25,6 +25,8 @@ const UserSchema = new Schema({
   favorites : [{ type: Schema.Types.ObjectId, ref: "User"}],
   videoFile: { type: String },
   highlights: { type: String},
+  weightedGpa: { type: Number },
+  unweightedGpa: { type: Number },
 });
 
 UserSchema.pre("save", function(next) {
