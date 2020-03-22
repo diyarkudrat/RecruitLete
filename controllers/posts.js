@@ -74,9 +74,19 @@ module.exports = (app) => {
     //Like a post
     app.put("/posts/:id/like", function(req, res) {
         Post.findById(req.params.id).exec(function(err, post) {
-          post.likes.push(req.user._id);
-          post.totalLikes = post.totalLikes + 1;
-          post.save();
+
+          console.log('!!!!!!!')
+          console.log(post.likes)
+
+          for (i = 0; i < post.likes.length; i++) {
+            if (req.user._id == i) {
+              console.log("already liked post")
+            } else {
+              post.likes.push(req.user._id);
+              post.totalLikes = post.totalLikes + 1;
+              post.save();
+            }
+          }
 
           console.log(post.totalLikes)
             
