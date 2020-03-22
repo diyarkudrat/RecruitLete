@@ -33,7 +33,9 @@
     </div>
 </form>
 
-<h1 style="font-weight: 600;">Comments</h1><br>
-{{#each post.comments}}
-  {{> comment comment=this postId=../post._id}}
-{{/each}}
+<div style="margin-bottom: 5rem;">
+  <h1 style="font-weight: 600;">Comments</h1><br>
+  {{#each post.comments}}
+    {{> comment comment=this postId=../post._id}}
+  {{/each}}
+</div>
