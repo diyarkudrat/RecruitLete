@@ -57,17 +57,24 @@
       <label for="inputInstagram">Instagram Link</label>
       <input type="text" name="instagram" class="form-control" id="inputInstagram" value="{{user.instagram}}">
     </div>
-  </div>
-  <h3>Upload Game Highlights!</h3><br>
-  <div class="input-group col-md-4">
-    <div class="input-group-prepend">
+  </div><br>
+  <h3>Upload Game Highlights!</h3>
+
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <div class="input-group-prepend">
       <span class="input-group-text">Upload</span>
     </div>
     <div class="custom-file">
-      <input type="file" class="custom-file-input" id="inputFile" name="videoFile">
+      <input type="file" class="custom-file-input" id="inputFile" name="">
       <label class="custom-file-label" for="inputFile">Upload Highlights!</label>
     </div>
-  </div><br><br>
+    </div>
+    <div class="form-group col-md-4">
+      <b for="highlights">Or Link it Here!</b>
+      <input type="text" name="highlights" class="form-control" id="highlights" value="{{user.highlights}}">
+    </div>
+  </div>
 
   <button type="submit" class="btn btn-primary">Save</button>
 </form>
