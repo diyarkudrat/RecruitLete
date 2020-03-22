@@ -22,7 +22,8 @@ const UserSchema = new Schema({
   twitter: { type: String },
   instagram: { type: String },
   posts : [{ type: Schema.Types.ObjectId, ref: "Post" }],
-  favorites : [{ type: Schema.Types.ObjectId, ref: "User"}]
+  favorites : [{ type: Schema.Types.ObjectId, ref: "User"}],
+  videoFile: { type: String }
 });
 
 UserSchema.pre("save", function(next) {
