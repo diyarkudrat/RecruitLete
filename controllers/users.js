@@ -36,16 +36,16 @@ module.exports = (app) => {
 
         const user = req.user
 
-        const videoFile = req.files.videoFile
+        // const videoFile = req.files.videoFile
 
-        videoFile.mv("public/highlights/" + videoFile.name, function(error) {
-            if (error) {
-                console.log("failed to upload file")
-                console.log(error)
-            } else {
-                console.log("file successfully uploaded")
-            }
-        })
+        // videoFile.mv("public/highlights/" + videoFile.name, function(error) {
+        //     if (error) {
+        //         console.log("failed to upload file")
+        //         console.log(error)
+        //     } else {
+        //         console.log("file successfully uploaded")
+        //     }
+        // })
     
         User.findByIdAndUpdate(req.params.id, {$set:req.body}, function(err, result) {
             if(err) {
