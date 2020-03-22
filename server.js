@@ -4,6 +4,7 @@ const expressValidator = require('express-validator')
 const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override')
 const jwt = require('jsonwebtoken');
+const fileUpload = require('express-fileupload')
 
 require('dotenv').config();
 
@@ -39,6 +40,7 @@ const checkAuth = (req, res, next) => {
     next();
 };
 app.use(checkAuth);
+app.use(fileUpload());
 
 // Set db
 require('./data/recruithub-db');

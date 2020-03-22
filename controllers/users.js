@@ -7,9 +7,15 @@ module.exports = (app) => {
     //GET profile information
     app.get('/profile/:id', (req, res) => {
         const currentUser = req.user;
+        console.log(currentUser)
         User.findById(req.params.id).populate('posts')
             .then((user) => {
-                res.render('profile', { user, currentUser })
+
+                if (currentUser._id == user._id) {
+                    res.render('profile', { user, currentUser })
+                } else {
+                    res.render('profile', { user })
+                }
             }).catch((err) => {
                 console.log(err.message)
             })
@@ -27,11 +33,19 @@ module.exports = (app) => {
     
     //Edit profile information
     app.post('/profile/:id/manage', (req, res) => {
-        console.log(req.body)
-    
-        console.log('!!!!!!!')
 
         const user = req.user
+
+        const videoFile = req.files.videoFile
+
+        videoFile.mv("public/highlights/" + videoFile.name, function(error) {
+            if (error) {
+                console.log("failed to upload file")
+                console.log(error)
+            } else {
+                console.log("file successfully uploaded")
+            }
+        })
     
         User.findByIdAndUpdate(req.params.id, {$set:req.body}, function(err, result) {
             if(err) {

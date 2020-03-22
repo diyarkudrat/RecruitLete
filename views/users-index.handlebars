@@ -1,10 +1,17 @@
 
 {{#if currentUser}}
-    <form class="form-inline my-2 my-lg-0" action="/users" method="GET">
+    {{!-- <form class="form-inline my-2 my-lg-0" action="/users" method="GET">
         <input type="text" name="search" placeholder="Search...">
         <input type="submit" value="Search" class="btn btn-primary">
-    </form>
-    <div class="row">
+    </form> --}}
+    <div class="box" style="margin-top: 2rem; margin-left: 2rem;">
+        <h1>Search for People</h1>
+        <form action="/users" method="GET">
+            <input type="text" name="search" placeholder="Search...">
+            <input type="submit" class="btn btn-primary" value="Search">
+        </form>
+    </div>
+    <div class="row" style="margin-top: 5rem; margin-left: 2rem;">
         {{#each users}}
             <div class="profile col-md-6">
                 <img src="https://cdn4.iconfinder.com/data/icons/e-commerce-181/512/477_profile__avatar__man_-512.png" alt="Profile Image" class="profile__image">
