@@ -37,18 +37,26 @@ module.exports = (app) => {
     });
 
     //INDEX
-    app.get('/', (req, res) => {
+    // app.get('/', (req, res) => {
+    //   const currentUser = req.user;
+
+    //   console.log(req.cookies);
+    //   Post.find().populate('author')
+    //   .then(posts => {
+    //       res.render('posts-index', { posts, currentUser });
+    //   }).catch(err => {
+    //       console.log(err.message);
+    //   })
+    // });
+    app.get('/', async(req,res) => {
       const currentUser = req.user;
-      // res.render('home', {});
-      console.log(req.cookies);
-      Post.find().populate('author')
-      .then(posts => {
-          res.render('posts-index', { posts, currentUser });
-          // res.render('home', {});
-      }).catch(err => {
-          console.log(err.message);
-      })
-    });
+      try {
+        const posts = await Post.find({}).sort({createdAt: -1})
+        res.render('posts-index', { posts, currentUser })
+      } catch(e) {
+        console.log(e)
+      }
+    })
 
     //GET SINGLE POST
     app.get("/posts/:id", function (req, res) {
