@@ -94,13 +94,29 @@ module.exports = (app) => {
       })
     })
 
+    app.get('/posts/:id/delete', (req, res) => {
+      const currentUser = req.user;
+      
+      Post.findById(req.params.id).then((post) => {
+        res.render('delete-post', { post, currentUser })
+      }).catch((err) => {
+        console.log(err.message)
+    })
+
+    })
+
     //DELETE SINGLE POST
     app.post("/posts/:id/delete", function(req, res) {
 
-      Post.findByIdAndDelete(req.params.id)
-        .then(
-          res.redirect('/')
-        )
+      Post.findByIdAndDelete(req.params.id, (err, post) => {
+        if(err) {
+          console.log(err)
+        } else {
+          res.status(200);
+          res.redirect(`/`)
+        }
+      })
+        
     });
 
     //Like a post
