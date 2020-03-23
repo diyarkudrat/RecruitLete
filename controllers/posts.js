@@ -59,7 +59,7 @@ module.exports = (app) => {
     })
 
     //GET SINGLE POST
-    app.get("/posts/:id", function (req, res) {
+    app.get("/posts/:id", (req, res) => {
       const currentUser = req.user;
       Post.findById(req.params.id).populate('comments').lean()
           .then(post => {
@@ -69,6 +69,28 @@ module.exports = (app) => {
               console.log(err.message);
           });
     });
+
+    app.get('/posts/:id/edit', (req, res) => {
+      const currentUser = req.user;
+  
+      Post.findById(req.params.id).then((post) => {
+          res.render('edit-post', { post, currentUser })
+        }).catch((err) => {
+          console.log(err.message)
+        })
+  })
+
+    //Edit Single Post
+    app.post('/posts/:id/edit', (req, res) => {
+
+      Post.findByIdAndUpdate(req.params.id, {$set:req.body}, function(err, result) {
+        if(err) {
+            console.log(err);
+        }
+        console.log("RESULT: " + result);
+        res.redirect(`/`);
+    })
+    })
 
     //DELETE SINGLE POST
     app.post("/posts/:id/delete", function(req, res) {
