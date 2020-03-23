@@ -125,17 +125,18 @@
                     <div class="column">
                         {{#each user.posts}}
                             <li class="list-group-item">
-                                <div class="post">
-                                    <div class="post-info">
-                                        <div class="post-date">
-                                            <span>{{this.createdAt}}</span>
-                                        </div>
-                                        <h1 class="post-title">{{this.content}}</h1>
-                                        <a href="posts/{{this._id}}"class="post-author">{{ this.author.username}}</a>
-                                    </div><br>
-                                    <b class="total-likes">Likes: {{this.totalLikes}}</b>
+                        <div class="post">
+                            <div class="post-info">
+                                <div class="post-date">
+                                    <a href="profile/{{this.author._id}}"class="post-author">{{ this.author.username}}</a>
                                 </div>
-                            </li>
+                                <span>{{this.createdAt}}</span><br><br>
+                                <a class="post-title" href="/posts/{{this._id}}">{{this.content}}</a><br>
+
+                            <b class="total-likes" data-id="{{this._id}}">Likes: {{this.totalLikes}}</b>
+                            </div>
+                        </div>
+                    </li>
                         {{/each}}
                     </div>
                 </div>

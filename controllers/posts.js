@@ -72,16 +72,18 @@ module.exports = (app) => {
 
     app.get('/posts/:id/edit', (req, res) => {
       const currentUser = req.user;
-  
+
       Post.findById(req.params.id).then((post) => {
           res.render('edit-post', { post, currentUser })
         }).catch((err) => {
           console.log(err.message)
-        })
+      })
+
   })
 
     //Edit Single Post
     app.post('/posts/:id/edit', (req, res) => {
+      const currentUser = req.user
 
       Post.findByIdAndUpdate(req.params.id, {$set:req.body}, function(err, result) {
         if(err) {
@@ -89,7 +91,7 @@ module.exports = (app) => {
         }
         console.log("RESULT: " + result);
         res.redirect(`/`);
-    })
+      })
     })
 
     //DELETE SINGLE POST
