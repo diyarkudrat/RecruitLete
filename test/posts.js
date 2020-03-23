@@ -19,10 +19,8 @@ describe('Posts', function() {
   const agent = chai.request.agent(server);
   // Post that we'll use for testing purposes
   const newPost = {
-      title: 'post title',
+      content: 'post title',
       url: 'https://www.google.com',
-      summary: 'post summary',
-      subreddit: 'test'
   };
   const user = {
       username: "posts-test",
@@ -78,7 +76,7 @@ describe('Posts', function() {
     });
     
     after(function (done) {
-        Post.findOneAndDelete(newPost)
+        Post.findOneAndUpdate(newPost)
         .then(function (res) {
             agent.close()
 
