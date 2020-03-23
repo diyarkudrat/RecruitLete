@@ -1,0 +1,86 @@
+{{#if currentUser}}
+<form method="POST" action="/posts/{{post._id}}/edit">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputContent">Content</label>
+      <input type="text" name="content" class="form-control" id="inputcontent" value="{{post.content}}"></input>
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+      <label for="inputUrl">URL</label>
+      <input type="text" name="url" class="form-control" id="inputUrl" value="{{post.url}}"></input>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+{{else}}
+
+<div class="padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="https://via.placeholder.com/600x350">
+                </div>
+                <div class="col-sm-6 text-center">
+                    <h2>All about RecruitHub</h2>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <h4>Hello World</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <img src="https://via.placeholder.com/250x200" class="img-responsive">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <h4>RecruitHub</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <img src="https://via.placeholder.com/250x200" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fixed">
+    </div>
+
+    <div class="padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4>Here's about RecruitHub</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                </div>
+                <div class="col-sm-6">
+                    <img src="https://via.placeholder.com/600x350">
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{/if}}
