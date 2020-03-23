@@ -70,12 +70,12 @@ module.exports = (app) => {
         res.redirect('/');
     });
 
-    app.put("/users/:id/favorite", function(req, res) {
+    app.post("/users/:id/favorite", function(req, res) {
         User.findById(req.params.id).exec(function(err, user) {
 
           user.favorites.push(req.user);
           user.save();
-
+            console.log("!!!!!!!!!!!")
           console.log(user.favorites)
         
           res.status(200);
