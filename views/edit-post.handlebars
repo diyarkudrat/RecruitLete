@@ -1,4 +1,5 @@
 {{#if currentUser}}
+<div style="margin-bottom: 20%; margin-top: 10%">
 <form method="POST" action="/posts/{{post._id}}/edit">
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -10,9 +11,10 @@
       <label for="inputUrl">URL</label>
       <input type="text" name="url" class="form-control" id="inputUrl" value="{{post.url}}"></input>
     </div>
-  </div>
-
   <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+</div>
+
 </form>
 
 {{else}}
