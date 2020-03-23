@@ -14,5 +14,5 @@ An online recruiting platform for student-athletes to expose their athletic and 
 run this command in terminal:
 
 ```bash
-git clone https://github.com/diyarkudrat/RecruitHub.git
+git clone https://github.com/diyarkudrat/RecruitLete.git
 ```
