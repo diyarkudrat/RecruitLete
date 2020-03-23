@@ -78,15 +78,15 @@ module.exports = (app) => {
           console.log('!!!!!!!')
           console.log(post.likes)
 
-          for (i = 0; i < post.likes.length; i++) {
-            if (req.user._id == i) {
-              console.log("already liked post")
-            } else {
-              post.likes.push(req.user._id);
-              post.totalLikes = post.totalLikes + 1;
-              post.save();
-            }
-          }
+          // for (i = 0; i < post.likes.length; i++) {
+          //   if (req.user._id == i) {
+          //     console.log("already liked post")
+          //   } else {
+            //   }
+            // }
+          post.likes.push(req.user._id);
+          post.totalLikes = post.totalLikes + 1;
+          post.save();
 
           console.log(post.totalLikes)
             
