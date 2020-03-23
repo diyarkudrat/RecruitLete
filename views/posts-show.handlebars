@@ -8,6 +8,7 @@
     <b>Likes: {{post.totalLikes}}</b>
   {{#if currentUser}}
       <a class="btn btn-warning" href="/posts/{{post._id}}/edit">Edit</a>
+      <a class="btn btn-danger" href="/posts/{{post._id}}/delete">Delete</a>
   {{/if}}
   </div>
 </div>
