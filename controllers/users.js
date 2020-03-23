@@ -7,7 +7,6 @@ module.exports = (app) => {
     //GET profile information
     app.get('/profile/:id', (req, res) => {
         const currentUser = req.user;
-        console.log(currentUser)
         User.findById(req.params.id).populate('posts')
             .then((user) => {
 
@@ -74,7 +73,6 @@ module.exports = (app) => {
         User.find({})
         .then(users => {
             res.render('users-index', { users, currentUser });
-            // res.render('home', {});
         }).catch(err => {
             console.log(err.message);
         })
