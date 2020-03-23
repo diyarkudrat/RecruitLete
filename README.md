@@ -1,6 +1,6 @@
 # RecruitLete!
 
-## Deployed Sit URL
+## Deployed Site URL
 `https://recruithub-dk.herokuapp.com`
 
 If you do not want to clone the repository, you can use this URL.
