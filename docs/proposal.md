@@ -24,7 +24,7 @@ CRUD a student-athlete user and coach user.
 
 ## Bike
 
-Oauth authentication through your Google Account
+User Authentication
 
 ## Car
 
