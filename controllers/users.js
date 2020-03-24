@@ -30,6 +30,7 @@ module.exports = (app) => {
           })
     })
     
+    
     //Edit profile information
     app.post('/profile/:id/manage', (req, res) => {
 
