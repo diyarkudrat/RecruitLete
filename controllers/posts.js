@@ -3,6 +3,9 @@ const User = require('../models/user');
 
 module.exports = (app) => {
 
+    app.post("/healthcheck", (req, res) => {
+      res.sendStatus(200);
+    });
 
     app.get('/posts/new', (req, res) => {
         const currentUser = req.user

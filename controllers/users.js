@@ -57,6 +57,8 @@ module.exports = (app) => {
     })
     
     //Get all users
+
+    // ELASTIC SEARCH FOR SEARCHING FOR MULTIPLE FIELDS!!!!!!!!!!!!
     app.get('/users', (req, res) => {
         const currentUser = req.user;
 
