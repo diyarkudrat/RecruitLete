@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+    mongo:
+        image: "mongo"
+        volumes:
+            - ./data:/data/db
+        ports:
+            - "27017:27017"
+
+    web:
+        build: .
+        image: recruitlete
+        command: ./wait-for.sh db:27017 -- npm start server.js
+        ports:
+            - "3000:3000"
+        depends_on: 
+            - mongo
+

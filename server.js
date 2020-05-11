@@ -57,14 +57,14 @@ require('./controllers/replies.js')(app);
 require('./controllers/users.js')(app);
 
 
-const mongoose = require('mongoose')
-const mongo_uri = process.env.MONGODB_URI
-mongoose.connect(mongo_uri)
 
 
 const port = process.env.PORT
 
 app.listen(port, () => {
+    const mongoose = require('mongoose')
+    const mongo_uri = process.env.MONGODB_URI
+    mongoose.connect(mongo_uri)
     console.log(`listening on localhost:${port}`)
 });
 

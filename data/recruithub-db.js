@@ -2,10 +2,10 @@
 const mongoose = require("mongoose");
 assert = require("assert");
 
-const url = "mongodb://localhost/reddit-db";
+
 mongoose.Promise = global.Promise;
 mongoose.connect(
-  "mongodb://localhost/recruithub-db",
+  "mongodb://mongo/recruithub-db",
   { useNewUrlParser: true }
 );
 mongoose.connection.on("error", console.error.bind(console, "MongoDB connection Error:"));
