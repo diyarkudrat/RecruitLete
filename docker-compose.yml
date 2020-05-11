@@ -10,7 +10,6 @@ services:
     web:
         build: .
         image: recruitlete
-        command: ./wait-for.sh db:27017 -- npm start server.js
         ports:
             - "3000:3000"
         depends_on: 
