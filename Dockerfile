@@ -1,8 +1,6 @@
 # Node base docker image
-FROM node:10
+FROM node:10-alpine
 
-# install netcat ; found this suggestion on Stack OverFlow to solve the "Operation timed out" error when running docker-compose
-RUN apt-get -q update && apt-get -qy install netcat
 
 # Directory to put code in app folder
 WORKDIR /app
