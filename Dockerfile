@@ -1,6 +1,7 @@
 # Node base docker image
-FROM node:10-alpine
+FROM node:14
 
+RUN apt update && apt install -y netcat
 
 # Directory to put code in app folder
 WORKDIR /app
