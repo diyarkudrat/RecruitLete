@@ -9,9 +9,10 @@ services:
 
     web:
         build: .
+        # command: "node server.js"
         image: recruitlete
         ports:
-            - "3000:3000"
+            - "5000:5000"
         depends_on: 
             - mongo
 
