@@ -19,4 +19,4 @@ COPY . /app
 CMD ./wait-for.sh db:27017 && npm start server.js
 
 # Application's default port
-EXPOSE 3000
+EXPOSE 5000
